@@ -5,13 +5,14 @@ const initialState = {
 
 export const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD':
+    case 'USER/ADD':
       return {
         ...state,
-        userList: state.userList.concat(action.userObject)
+        userList: state.userList.concat(action.user)
       };
-    case 'DELETE':
+    case 'USER/DELETE':
       return {
+        ...state,
         userList: state.userList.filter(el => el.id != action.id)
       };
     default:

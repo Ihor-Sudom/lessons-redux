@@ -1,14 +1,14 @@
 
-export const addUser = (userObject) => {
+export const addUser = (user) => {
   return {
-    type: 'ADD',
-    userObject,
+    type: 'USER/ADD',
+    user,
   };
 };
 
 export const deleteUser = (id) => {
   return {
-    type: 'DELETE',
+    type: 'USER/DELETE',
     id,
   };
 };
