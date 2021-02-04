@@ -1,11 +1,11 @@
 import store from './store.js';
-import { increment, decrement } from './users.actions.js';
+import { addUser, deleteUser } from './users.actions.js';
 
-store.dispatch(increment({id: 10, name: 'Tom'}));
-store.dispatch(increment({id: 15, name: 'John'}));
-store.dispatch(increment({id: 20, name: 'Ihor'}));
+store.dispatch(addUser({id: 10, name: 'Tom'}));
+store.dispatch(addUser({id: 15, name: 'John'}));
+store.dispatch(addUser({id: 20, name: 'Ihor'}));
 
-store.dispatch(decrement(15));
+store.dispatch(deleteUser(15));
 
 
   console.log(store.getState());

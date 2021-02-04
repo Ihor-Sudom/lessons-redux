@@ -1,14 +1,14 @@
 
-export const increment = (userObject) => {
+export const addUser = (userObject) => {
   return {
-    type: 'INCREMENT',
+    type: 'ADD',
     userObject,
   };
 };
 
-export const decrement = (id) => {
+export const deleteUser = (id) => {
   return {
-    type: 'DECREMENT',
+    type: 'DELETE',
     id,
   };
 };
