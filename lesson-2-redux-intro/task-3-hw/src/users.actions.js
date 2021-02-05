@@ -4,13 +4,13 @@ export const DELETE = 'USER/DELETE';
 export const addUser = (user) => {
   return {
     type: ADD,
-    user,
+    payload: user,
   };
 };
 
 export const deleteUser = (id) => {
   return {
     type: DELETE,
-    id,
+    payload: id,
   };
 };
