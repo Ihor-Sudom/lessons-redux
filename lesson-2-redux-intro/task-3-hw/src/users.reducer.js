@@ -7,14 +7,16 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD:
+      const newUser = state.userList.concat(action.payload)
       return {
         ...state,
-        userList: action.payload
+        userList: newUser
       };
     case DELETE:
+      const newUserList = state.userList.filter(el => el.id != action.payload);
       return {
         ...state,
-        userList: state.userList.filter(el => el.id != action.payload)
+        userList: newUserList
       };
     default:
       return state;

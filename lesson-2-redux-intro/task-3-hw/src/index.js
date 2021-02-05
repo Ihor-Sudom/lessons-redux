@@ -1,6 +1,10 @@
 import store from './store.js';
 import { addUser, deleteUser } from './users.actions.js';
 
+store.subscribe(() => {
+  console.log(store.getState());
+})
+
 
 store.dispatch(addUser({id: 10, name: 'Tom'}));
 store.dispatch(addUser({id: 15, name: 'John'}));
