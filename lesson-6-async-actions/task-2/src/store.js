@@ -6,12 +6,21 @@ const reducer = combineReducers({
   users: usersReducer,
 });
 
+const logger = store => next => action => {
+  console.group(action.type);
+  console.info('dispatching', action);
+  let result = next(action);
+  console.log('next state', store.getState());
+  console.groupEnd();
+  return result;
+}
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ || compose;
 
 const store = createStore(
   reducer,
   composeEnhancers(
-    applyMiddleware(thunk)
+    applyMiddleware(thunk, logger)
   )
 );
 
